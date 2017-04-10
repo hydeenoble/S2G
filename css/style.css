@@ -4,7 +4,7 @@
     border-radius: 0;
 }
 .bg{
-    height: 92vh;
+    height: auto;
     position: relative;
     /*background-color: rgba(17, 54, 100, 0.5);*/
     background-image: url("../image/simple-images-19.jpg");

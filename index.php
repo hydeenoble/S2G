@@ -48,44 +48,46 @@ require_once 'action.php';
         <div class="col-md-5 how-to-wrapper">
             <h2 class="text-center heading">Getting Started</h2>
             <hr style="border-color: #0e0e0e">
-            <p class="text">S2G is a platform that generates graphs from an upload Spreadsheet.</p>
-            <p class="text">S2G (version 1.0.0) only accepts Spreadsheets with .xlsx and xlx extensions with the first two columns as String Data type (e.g. first name and laste name) and the thrid coumn as an Integer (e.g. 34, 43 e.t.c)</p>
+            <p class="text">S2G is a platform that generates graphs from a Spreadsheet.</p>
+            <p class="text">S2G (version 1.0.0) only accepts Spreadsheets with .xlsx and xlx extensions.</p>
+            <p class="text">You can upload an excel document that will contain bank transactions and
+                S2G estimate if someone has a bad credit rating or good credit rating and generated graphs based of the transaction types.</p>
             <br>
             <h4>Example 1</h4>
             <table class="table table-bordered">
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Score</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Type</th>
                 </tr>
                 <tr>
-                    <td>Emehinola</td>
-                    <td>Idowu</td>
-                    <td>99</td>
+                    <td>01-03-2017</td>
+                    <td>1352</td>
+                    <td>credit</td>
                 </tr>
                 <tr>
-                    <td>Hydee</td>
-                    <td>Noble</td>
-                    <td>82</td>
+                    <td>01-03-1989</td>
+                    <td>463</td>
+                    <td>debit</td>
                 </tr>
             </table>
 
             <h4>Example 2</h4>
             <table class="table table-bordered">
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Age</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Type</th>
                 </tr>
                 <tr>
-                    <td>Emehinola</td>
-                    <td>Idowu</td>
-                    <td>20</td>
+                    <td>01-03-1999</td>
+                    <td>557</td>
+                    <td>debit</td>
                 </tr>
                 <tr>
-                    <td>Hydee</td>
-                    <td>Noble</td>
-                    <td>21</td>
+                    <td>01-03-2016</td>
+                    <td>556</td>
+                    <td>credit</td>
                 </tr>
             </table>
         </div>
