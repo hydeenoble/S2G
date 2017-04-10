@@ -47,7 +47,7 @@ require_once 'action.php';
 
         <div class="col-md-5 how-to-wrapper">
             <h2 class="text-center heading">Getting Started</h2>
-            <hr style="border-color: #0e0e0e">
+            <hr>
             <p class="text">S2G is a platform that generates graphs from a Spreadsheet.</p>
             <p class="text">S2G (version 1.0.0) only accepts Spreadsheets with .xlsx and xlx extensions.</p>
             <p class="text">You can upload an excel document that will contain bank transactions and
