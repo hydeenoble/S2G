@@ -1,0 +1,56 @@
+.navbar{
+    margin-bottom: 0px !important;
+    /*border: 1px solid red;*/
+    border-radius: 0;
+}
+.bg{
+    height: 92vh;
+    position: relative;
+    /*background-color: rgba(17, 54, 100, 0.5);*/
+    background-image: url("../image/simple-images-19.jpg");
+}
+
+
+form{
+    /*border: 1px solid red;*/
+    margin-top: 180px;
+}
+
+.span-btn{
+    /*height: 50px !important;*/
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.span-text{
+    height: 60px;
+}
+
+.how-to-wrapper{
+    height: 92vh;
+    border-left: 1px solid #323e8b;
+}
+
+.heading{
+    font-weight: 700;
+}
+
+.text{
+    font-size: 14px;
+}
+
+
+
+.live-chart-wrapper{
+    /*border: 2px solid green;*/
+    width: 50vw !important;
+
+}
+.live-chart-wrapper span{
+    width: 90vw !important;
+}
+/*#myFirstChart{*/
+    /*border: 2px solid black !important;*/
+    /*width: 100% !important;*/
+    /*background-color: black !important;*/
+/*}*/
