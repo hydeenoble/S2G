@@ -42,3 +42,53 @@ form{
 .debit-canvas{
     border-left: 1px solid #df691a;
 }
+
+.top-div{
+    border-right: 1px solid #596a7b;
+}
+
+/*.credit-rating-div{*/
+    /*!*border: 1px solid red;*!*/
+    /*cursor: hand;*/
+/*}*/
+
+/* Tooltip container */
+.credit-rating-div {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.credit-rating-div .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    /*width: 120px;*/
+    top: 100%;
+    left: -10%;
+    margin-left: -20px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.credit-rating-div:hover .tooltiptext {
+    visibility: visible;
+}
+
+.credit-rating-div .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}

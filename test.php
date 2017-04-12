@@ -5,6 +5,8 @@
  * Date: 4/10/17
  * Time: 4:05 PM
  */
+header('Access-Control-Allow-Origin: *');
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $db = mysqli_connect('127.0.0.1','root','root','s2g');
@@ -35,7 +37,8 @@ $totalAmount = 0;
 $debitAmount = 0;
 $creditRating = 0;
 $creditAmount = 0;
-
+$data['debit'][] = [];
+$data['credit'][] = [];
 
 foreach ($debitResult as $row) {
     $data['debit'][] = $row;
@@ -57,6 +60,12 @@ while($row = mysqli_fetch_assoc($creditResult2)){
 
 while($row = mysqli_fetch_assoc($result)){
     $totalAmount += $row['amount'];
+}
+if ($creditAmount < 1){
+    $data['credit'][] = [];
+}
+if ($debitAmount < 1){
+    $data['debit'][] = [];
 }
 
 $data['total_credit'] = $creditAmount;

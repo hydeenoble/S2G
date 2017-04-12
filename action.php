@@ -5,7 +5,7 @@
  * Date: 3/14/17
  * Time: 12:43 PM
  */
-
+header('Access-Control-Allow-Origin: *');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])){
                 for ($row = 2; $row <= $highestRow; $row++) {
                     //  Read a row of data into an array
                     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
-                    $sql = "INSERT INTO customers (transc_date,amount,transc_type) VALUES('".$rowData[0][0]."','".$rowData[0][1]."','".$rowData[0][2]."')";
+                    $sql = "INSERT INTO customers (transc_date,amount,transc_type) VALUES('". date('Y-m-d',strtotime($rowData[0][0]))."','".$rowData[0][1]."','".strtolower($rowData[0][2])."')";
 
                     if ($db->query($sql) === FALSE) {
                         echo "Error: " . $sql . "<br>" . $db->error;
@@ -73,7 +73,7 @@ if (isset($_POST['submit'])){
 
                 $last_inserted_id = $db->insert_id;
 
-                header("Location: chart.html?from=$last_table_id&to=$last_inserted_id");
+                header("Location: chart.php?from=$last_table_id&to=$last_inserted_id");
             }
         }else{
             $error = "You are trying to upload a ". strtoupper($extension) ." file. Please only .xlsx and .xls files are allowed";
