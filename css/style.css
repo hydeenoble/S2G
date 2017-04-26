@@ -1,56 +1,50 @@
-.navbar{
+.navbar {
     margin-bottom: 0px !important;
-    /*border: 1px solid red;*/
     border-radius: 0;
 }
-.bg{
+
+.bg {
     height: auto;
     position: relative;
-    /*background-color: rgba(17, 54, 100, 0.5);*/
-    /*background-image: url("../image/simple-images-19.jpg");*/
 }
 
-
-form{
-    /*border: 1px solid red;*/
+form {
     margin-top: 180px;
 }
 
-.span-btn{
-    /*height: 50px !important;*/
+.main-container {
+    padding: 10px 80px;
+}
+
+.span-btn {
     text-align: center;
     padding: 15px 20px;
 }
 
-.span-text{
+.span-text {
     height: 53px;
 }
 
-.how-to-wrapper{
+.how-to-wrapper {
     height: 92vh;
     border-left: 1px solid #596a7b;
 }
 
-.heading{
+.heading {
     font-weight: 700;
 }
 
-.text{
+.text {
     font-size: 14px;
 }
 
-.debit-canvas{
+.debit-canvas {
     border-left: 1px solid #df691a;
 }
 
-.top-div{
+.top-div {
     border-right: 1px solid #596a7b;
 }
-
-/*.credit-rating-div{*/
-    /*!*border: 1px solid red;*!*/
-    /*cursor: hand;*/
-/*}*/
 
 /* Tooltip container */
 .credit-rating-div {
@@ -85,10 +79,11 @@ form{
 .credit-rating-div .tooltiptext::after {
     content: " ";
     position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
+    bottom: 100%; /* At the top of the tooltip */
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent black transparent;
 }
+

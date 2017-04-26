@@ -28,14 +28,14 @@
 class PHPExcel_Cell_DataType
 {
     /* Data types */
-    const TYPE_STRING2  = 'str';
-    const TYPE_STRING   = 's';
-    const TYPE_FORMULA  = 'f';
-    const TYPE_NUMERIC  = 'n';
-    const TYPE_BOOL     = 'b';
-    const TYPE_NULL     = 'null';
-    const TYPE_INLINE   = 'inlineStr';
-    const TYPE_ERROR    = 'e';
+    const TYPE_STRING2 = 'str';
+    const TYPE_STRING = 's';
+    const TYPE_FORMULA = 'f';
+    const TYPE_NUMERIC = 'n';
+    const TYPE_BOOL = 'b';
+    const TYPE_NULL = 'null';
+    const TYPE_INLINE = 'inlineStr';
+    const TYPE_ERROR = 'e';
 
     /**
      * List of error codes
@@ -43,13 +43,13 @@ class PHPExcel_Cell_DataType
      * @var array
      */
     private static $errorCodes = array(
-        '#NULL!'  => 0,
+        '#NULL!' => 0,
         '#DIV/0!' => 1,
         '#VALUE!' => 2,
-        '#REF!'   => 3,
-        '#NAME?'  => 4,
-        '#NUM!'   => 5,
-        '#N/A'    => 6
+        '#REF!' => 3,
+        '#NAME?' => 4,
+        '#NUM!' => 5,
+        '#N/A' => 6
     );
 
     /**
@@ -66,7 +66,7 @@ class PHPExcel_Cell_DataType
      * DataType for value
      *
      * @deprecated  Replaced by PHPExcel_Cell_IValueBinder infrastructure, will be removed in version 1.8.0
-     * @param       mixed  $pValue
+     * @param       mixed $pValue
      * @return      string
      */
     public static function dataTypeForValue($pValue = null)
@@ -104,7 +104,7 @@ class PHPExcel_Cell_DataType
      */
     public static function checkErrorCode($pValue = null)
     {
-        $pValue = (string) $pValue;
+        $pValue = (string)$pValue;
 
         if (!array_key_exists($pValue, self::$errorCodes)) {
             $pValue = '#NULL!';

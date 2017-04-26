@@ -35,7 +35,7 @@ class PHPExcel_RichText_Run extends PHPExcel_RichText_TextElement implements PHP
     /**
      * Create a new PHPExcel_RichText_Run instance
      *
-     * @param     string        $pText        Text
+     * @param     string $pText Text
      */
     public function __construct($pText = '')
     {
@@ -57,7 +57,7 @@ class PHPExcel_RichText_Run extends PHPExcel_RichText_TextElement implements PHP
     /**
      * Set font
      *
-     * @param    PHPExcel_Style_Font        $pFont        Font
+     * @param    PHPExcel_Style_Font $pFont Font
      * @throws     PHPExcel_Exception
      * @return PHPExcel_RichText_ITextElement
      */

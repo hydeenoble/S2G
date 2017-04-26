@@ -33,7 +33,72 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
      * @var int
      */
     private static $imageCounter = 0;
-
+    /**
+     * Name
+     *
+     * @var string
+     */
+    protected $name;
+    /**
+     * Description
+     *
+     * @var string
+     */
+    protected $description;
+    /**
+     * Worksheet
+     *
+     * @var PHPExcel_Worksheet
+     */
+    protected $worksheet;
+    /**
+     * Coordinates
+     *
+     * @var string
+     */
+    protected $coordinates;
+    /**
+     * Offset X
+     *
+     * @var int
+     */
+    protected $offsetX;
+    /**
+     * Offset Y
+     *
+     * @var int
+     */
+    protected $offsetY;
+    /**
+     * Width
+     *
+     * @var int
+     */
+    protected $width;
+    /**
+     * Height
+     *
+     * @var int
+     */
+    protected $height;
+    /**
+     * Proportional resize
+     *
+     * @var boolean
+     */
+    protected $resizeProportional;
+    /**
+     * Rotation
+     *
+     * @var int
+     */
+    protected $rotation;
+    /**
+     * Shadow
+     *
+     * @var PHPExcel_Worksheet_Drawing_Shadow
+     */
+    protected $shadow;
     /**
      * Image index
      *
@@ -42,103 +107,26 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
     private $imageIndex = 0;
 
     /**
-     * Name
-     *
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * Description
-     *
-     * @var string
-     */
-    protected $description;
-
-    /**
-     * Worksheet
-     *
-     * @var PHPExcel_Worksheet
-     */
-    protected $worksheet;
-
-    /**
-     * Coordinates
-     *
-     * @var string
-     */
-    protected $coordinates;
-
-    /**
-     * Offset X
-     *
-     * @var int
-     */
-    protected $offsetX;
-
-    /**
-     * Offset Y
-     *
-     * @var int
-     */
-    protected $offsetY;
-
-    /**
-     * Width
-     *
-     * @var int
-     */
-    protected $width;
-
-    /**
-     * Height
-     *
-     * @var int
-     */
-    protected $height;
-
-    /**
-     * Proportional resize
-     *
-     * @var boolean
-     */
-    protected $resizeProportional;
-
-    /**
-     * Rotation
-     *
-     * @var int
-     */
-    protected $rotation;
-
-    /**
-     * Shadow
-     *
-     * @var PHPExcel_Worksheet_Drawing_Shadow
-     */
-    protected $shadow;
-
-    /**
      * Create a new PHPExcel_Worksheet_BaseDrawing
      */
     public function __construct()
     {
         // Initialise values
-        $this->name                = '';
-        $this->description        = '';
-        $this->worksheet          = null;
-        $this->coordinates        = 'A1';
-        $this->offsetX            = 0;
-        $this->offsetY            = 0;
-        $this->width              = 0;
-        $this->height             = 0;
+        $this->name = '';
+        $this->description = '';
+        $this->worksheet = null;
+        $this->coordinates = 'A1';
+        $this->offsetX = 0;
+        $this->offsetY = 0;
+        $this->width = 0;
+        $this->height = 0;
         $this->resizeProportional = true;
-        $this->rotation           = 0;
-        $this->shadow             = new PHPExcel_Worksheet_Drawing_Shadow();
+        $this->rotation = 0;
+        $this->shadow = new PHPExcel_Worksheet_Drawing_Shadow();
 
         // Set image index
         self::$imageCounter++;
-        $this->imageIndex             = self::$imageCounter;
+        $this->imageIndex = self::$imageCounter;
     }
 
     /**
@@ -208,8 +196,8 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
     /**
      * Set Worksheet
      *
-     * @param     PHPExcel_Worksheet     $pValue
-     * @param     bool                $pOverrideOld    If a Worksheet has already been assigned, overwrite it and remove image from old Worksheet?
+     * @param     PHPExcel_Worksheet $pValue
+     * @param     bool $pOverrideOld If a Worksheet has already been assigned, overwrite it and remove image from old Worksheet?
      * @throws     PHPExcel_Exception
      * @return PHPExcel_Worksheet_BaseDrawing
      */
@@ -240,6 +228,28 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
             }
         }
         return $this;
+    }
+
+    /**
+     * Get hash code
+     *
+     * @return string    Hash code
+     */
+    public function getHashCode()
+    {
+        return md5(
+            $this->name .
+            $this->description .
+            $this->worksheet->getHashCode() .
+            $this->coordinates .
+            $this->offsetX .
+            $this->offsetY .
+            $this->width .
+            $this->height .
+            $this->rotation .
+            $this->shadow->getHashCode() .
+            __CLASS__
+        );
     }
 
     /**
@@ -388,10 +398,10 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
         if ($this->resizeProportional && !($width == 0 || $height == 0)) {
             if (($xratio * $this->height) < $height) {
                 $this->height = ceil($xratio * $this->height);
-                $this->width  = $width;
+                $this->width = $width;
             } else {
-                $this->width    = ceil($yratio * $this->width);
-                $this->height    = $height;
+                $this->width = ceil($yratio * $this->width);
+                $this->height = $height;
             }
         } else {
             $this->width = $width;
@@ -464,30 +474,8 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
      */
     public function setShadow(PHPExcel_Worksheet_Drawing_Shadow $pValue = null)
     {
-           $this->shadow = $pValue;
-           return $this;
-    }
-
-    /**
-     * Get hash code
-     *
-     * @return string    Hash code
-     */
-    public function getHashCode()
-    {
-        return md5(
-            $this->name .
-            $this->description .
-            $this->worksheet->getHashCode() .
-            $this->coordinates .
-            $this->offsetX .
-            $this->offsetY .
-            $this->width .
-            $this->height .
-            $this->rotation .
-            $this->shadow->getHashCode() .
-            __CLASS__
-        );
+        $this->shadow = $pValue;
+        return $this;
     }
 
     /**

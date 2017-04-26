@@ -47,16 +47,6 @@ class PHPExcel_Worksheet_Drawing extends PHPExcel_Worksheet_BaseDrawing implemen
     }
 
     /**
-     * Get Filename
-     *
-     * @return string
-     */
-    public function getFilename()
-    {
-        return basename($this->path);
-    }
-
-    /**
      * Get indexed filename (using image index)
      *
      * @return string
@@ -66,6 +56,16 @@ class PHPExcel_Worksheet_Drawing extends PHPExcel_Worksheet_BaseDrawing implemen
         $fileName = $this->getFilename();
         $fileName = str_replace(' ', '_', $fileName);
         return str_replace('.' . $this->getExtension(), '', $fileName) . $this->getImageIndex() . '.' . $this->getExtension();
+    }
+
+    /**
+     * Get Filename
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return basename($this->path);
     }
 
     /**
@@ -92,8 +92,8 @@ class PHPExcel_Worksheet_Drawing extends PHPExcel_Worksheet_BaseDrawing implemen
     /**
      * Set Path
      *
-     * @param     string         $pValue            File path
-     * @param     boolean        $pVerifyFile    Verify file
+     * @param     string $pValue File path
+     * @param     boolean $pVerifyFile Verify file
      * @throws     PHPExcel_Exception
      * @return PHPExcel_Worksheet_Drawing
      */

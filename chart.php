@@ -12,7 +12,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">SS2G</a>
+            <a class="navbar-brand" href="index.php">SS2G</a>
         </div>
     </div>
 </nav>
@@ -22,7 +22,7 @@
     <hr>
     <div class="row">
         <div class="col-md-4 col-lg-4 top-div credit-rating-div">
-            <h4 id="credit-rating" >CREDIT RATING = </h4>
+            <h4 id="credit-rating">CREDIT RATING = </h4>
             <span class="tooltiptext">
                 A credit rating is an evaluation of the credit risk of a prospective debtor
                 (an individual, a business, company or a government), predicting their ability
@@ -45,16 +45,16 @@
         <div class="col-md-4 col-lg-4 top-div">
             <h4 id="total-credit">TOTAL CREDIT = &#8358; </h4>
         </div>
-        <div class="col-md-4 col-lg-4">
+        <div class="col-md-4 col-lg-">
             <h4 id="total-debit">TOTAL DEBIT = &#8358; </h4>
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-12 col-lg-12  credit-canvas">
+        <div class="credit-canvas">
             <canvas id="credit-canvas"></canvas>
         </div>
-        <div class="col-md-12  col-lg-12 debit-canvas">
+        <div class="debit-canvas">
             <canvas id="debit-canvas"></canvas>
         </div>
     </div>
